@@ -27,3 +27,11 @@ test('Output for String itself is Number', ()=>{
 test('Output for String itself is Number', ()=>{
     expect(add('1,5')).toBe(6);
 });
+
+test('Output for String itself is Number', ()=>{
+    expect(add('1,5,6')).toBe(12);
+});
+
+test('Output for String itself is Number', ()=>{
+    expect(add('1, 67, 999')).toBe(1067);
+});
