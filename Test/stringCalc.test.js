@@ -1,37 +1,23 @@
 const {add} = require('../lib/stringCalc');
+const assert = require('assert'); 
 
-test('Output for Empty string', ()=>{
-    expect(add('')).toBe(0);
-});
+const cases = [
+  ['', 0],
+  ['1', 1],
+  ['2', 2],
+  ['12', 12],
+  ['257', 257],
+  ['1,2', 3],
+  ['1,5', 6],
+  ['1,5,6', 12],
+  ['1, 67, 999', 1067],
+];
 
-test('Output for String itself is Number', ()=>{
-    expect(add('1')).toBe(1);
-});
 
-test('Output for String itself is Number', ()=>{
-    expect(add('2')).toBe(2);
-});
-
-test('Output for String itself is Number', ()=>{
-    expect(add('12')).toBe(12);
-});
-
-test('Output for String itself is Number', ()=>{
-    expect(add('257')).toBe(257);
-});
-
-test('Output for String itself is Number', ()=>{
-    expect(add('1,2')).toBe(3);
-});
-
-test('Output for String itself is Number', ()=>{
-    expect(add('1,5')).toBe(6);
-});
-
-test('Output for String itself is Number', ()=>{
-    expect(add('1,5,6')).toBe(12);
-});
-
-test('Output for String itself is Number', ()=>{
-    expect(add('1, 67, 999')).toBe(1067);
+describe('String Calculator', () => {
+  cases.forEach(([input, expected]) => {
+    it(`returns ${expected} for "${input}"`, () => {
+      assert.strictEqual(add(input), expected);
+    });
+  });
 });
