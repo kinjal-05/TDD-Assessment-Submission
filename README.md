@@ -1,1 +1,1 @@
-# TDD-Assessment-Submission
+# String Calculator – TDD Kata
