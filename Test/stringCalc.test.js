@@ -22,9 +22,23 @@ const cases = [
   ['//\n\n1\n2', 3]
 ];
 
+const negativeCases = [
+  ['-1', '-1'],
+  ['2,-3,4', '-3'],
+  ['//;\n-1;2;-3', '-1,-3'],
+  ['1,-4,-9,5', '-4,-9']
+];
 
 describe('String Calculator', () => {
   cases.forEach(([input, expected]) => {
+    it(`returns ${expected} for "${input}"`, () => {
+      assert.strictEqual(add(input), expected);
+    });
+  });
+});
+
+describe('String Calculator', () => {
+  negativeCases.forEach(([input, expected]) => {
     it(`returns ${expected} for "${input}"`, () => {
       assert.strictEqual(add(input), expected);
     });
