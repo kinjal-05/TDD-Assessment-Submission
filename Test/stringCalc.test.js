@@ -37,10 +37,11 @@ describe('String Calculator', () => {
   });
 });
 
-describe('String Calculator', () => {
-  negativeCases.forEach(([input, expected]) => {
-    it(`returns ${expected} for "${input}"`, () => {
-      assert.strictEqual(add(input), expected);
+negativeCases.forEach(([input, negatives]) => {
+    it(`throws "negative numbers not allowed ${negatives}" for "${input}"`, () => {
+      assert.throws(
+        () => add(input),
+        new RegExp(`^negative numbers not allowed ${negatives}$`)
+      );
     });
   });
-});
