@@ -1,4 +1,4 @@
-const {add} = require('../lib/stringCalc');
+const {add , getSum} = require('../lib/stringCalc');
 const assert = require('assert'); 
 
 const cases = [
@@ -19,8 +19,20 @@ const cases = [
   ['//\\\n1\\2', 3],
   ['//\"\n1\"2\"3\"4', 10],
   ['//\t\n1\t2\t3', 6],
-  ['//\n\n1\n2', 3]
+  ['//\n\n1\n2', 3],
+  ['1002000000000000000000,3',1002000000000000000003]
 ];
+
+const sumCases = [
+  [[], 0],
+  [[5], 5],
+  [[1, 2, 3], 6],
+  [[-2, -3], -5],
+  [[1, -2, 3], 2],
+  [[100, 200, 300], 600],
+  [[1.5, 2.5, -4], 0]
+];
+
 
 const negativeCases = [
   ['-1', '-1'],
@@ -45,3 +57,11 @@ negativeCases.forEach(([input, negatives]) => {
       );
     });
   });
+
+describe('Utility – getSum()', () => {
+  sumCases.forEach(([arr, expected]) => {
+    it(`returns ${expected} for [${arr}]`, () => {
+      assert.strictEqual(getSum(arr), expected);
+    });
+  });
+});
