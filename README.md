@@ -8,14 +8,16 @@ A JavaScript/Node.js implementation of the classic String Calculator Test‑Driv
 ---
 
 ### ✨ **Features**
-| Capability               | Spec                                                                                                                                                                   |
-|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Basic addition**       | Handles an empty string, a single number, or any number of comma‑separated numbers.                                                                                    |
-| **Custom delimiters**    | Declare one or multiple custom delimiters of any length using the `//[delimiter]\n` header syntax (e.g. `//;\n1;2`).                                                   |
-| **New‐line support**     | Mix `\n` with delimiters (e.g. `"1\n2,3"` → **6**).                                                                                                                    |
-| **Negative‑number guard**| Throws `Error: negative numbers not allowed <list>` when any negative numbers are found.                                                                               |
-| **1000‑limit rule**      | Ignores numbers **> 1000** when summing.                                                                                                                                |
-| **Utility helper**       | `getSum(array)` mirrors the >1000 rule and negative handling.                                                                                                           |
+|---|--------------------------|----------------------|
+| 1 | **Basic addition (≤ 2 numbers)** | `Add("") → 0` &nbsp;·&nbsp; `Add("1") → 1` &nbsp;·&nbsp; `Add("1,2") → 3` |
+| 2 | **Unlimited numbers** | Accept any number of comma‑separated values: `Add("1,2,3,4") → 10` |
+| 3 | **New‑line support** | Treat `\n` as a delimiter: `Add("1\n2,3") → 6` &nbsp;·&nbsp; `"1,\n"` is **invalid** |
+| 4 | **Custom delimiter** | Header format `//[delim]\n`: `Add("//;\n1;2") → 3` (delimiter `;`) |
+| 5 | **Negative‑number guard** | Throw `Error: negatives not allowed -1,-4` (list **all** negatives) |
+| 6 | **Ignore > 1000** | Numbers > 1000 are skipped: `Add("2,1001") → 2` |
+| 7 | **Delimiter of any length** | Example `//[***]\n1***2***3` → **6** |
+| 8 | **Multiple delimiters** | Example `//[*][%]\n1*2%3` → **6** |
+| 9 | **Multi‑char, multi‑delimiter** | Example `//[$$$][&&]\n4$$$3&&2` → **9** |                                                                                                         |
 
 ---
 
@@ -47,9 +49,12 @@ A JavaScript/Node.js implementation of the classic String Calculator Test‑Driv
 # Clone the repo
 git clone https://github.com/kinjal-05/TDD-Assessment-Submission.git
 cd String_Calculator
+```
 
 # Install dependencies
+```bash
 npm install
+```
 
 ---
 
