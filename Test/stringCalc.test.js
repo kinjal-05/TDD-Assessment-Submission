@@ -54,13 +54,15 @@ describe('String Calculator', () => {
 });
 
 negativeCases.forEach(([input, negatives]) => {
-    it(`throws "negative numbers not allowed ${negatives}" for "${input}"`, () => {
-      assert.throws(
-        () => add(input),
+    test(`throws "negative numbers not allowed ${negatives}" for "${input}"`, () => {
+      // Jest version of assert.throws
+      expect(() => add(input)).toThrow(
         new RegExp(`^negative numbers not allowed ${negatives}$`)
       );
     });
   });
+
+
 
 describe('Utility – getSum()', () => {
   sumCases.forEach(([arr, expected]) => {
