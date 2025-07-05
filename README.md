@@ -86,7 +86,7 @@ Repeat this cycle until all rules are satisfied.
 
 ---
 
-## 📌 Regarding Commits
+## 📌 Test Results
 
 <img src="assets/Screenshot (23).png" alt="App Screenshot 1" width="500"/>
 <br/><br/>
