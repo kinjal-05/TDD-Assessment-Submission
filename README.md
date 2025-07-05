@@ -29,6 +29,7 @@ A JavaScript/Node.js implementation of the classic String Calculator Test‑Driv
 │   └── stringCalc.js      # Source code (add, getSum, helpers)
 ├── tests/
 │   └── stringCalc.test.js # Mocha test‑suite
+├── assets/
 ├── package.json           # Scripts + dependencies
 └── README.md              # This file
 ```
@@ -83,6 +84,13 @@ This kata follows the classic **Red → Green → Refactor** loop:
 
 Repeat this cycle until all rules are satisfied.
 
+---
+
+## 📌 Regarding Commits
+
+<img src="assets/Screenshot (23).png" alt="App Screenshot 1" width="500"/>
+<br/><br/>
+<img src="assets/Screenshot (24).png" alt="App Screenshot 2" width="500"/>
 
 
 
